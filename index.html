@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panda Translator - Professional Translation Tool with 126 Languages, OCR, and Smart Window Features">
+    <meta name="keywords" content="translator, OCR, translation, multilingual, Panda Translator">
+    <title>Panda Translator - Professional Translation Tool</title>
+    <link rel="icon" type="image/png" href="../P.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">عربي</button>
+        <button class="lang-btn" data-lang="el" onclick="setLanguage('el')">ΕΛ</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="../P.png" alt="Panda Logo">
+                <span>Panda</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" data-i18n="nav_home">Home</a></li>
+                <li><a href="#features" data-i18n="nav_features">Features</a></li>
+                <li><a href="#how-it-works" data-i18n="nav_how">How It Works</a></li>
+                <li><a href="#languages" data-i18n="nav_languages">Languages</a></li>
+                <li><a href="#download" data-i18n="nav_download">Download</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#home" data-i18n="nav_home" onclick="toggleMobileMenu()">Home</a></li>
+            <li><a href="#features" data-i18n="nav_features" onclick="toggleMobileMenu()">Features</a></li>
+            <li><a href="#how-it-works" data-i18n="nav_how" onclick="toggleMobileMenu()">How It Works</a></li>
+            <li><a href="#languages" data-i18n="nav_languages" onclick="toggleMobileMenu()">Languages</a></li>
+            <li><a href="#download" data-i18n="nav_download" onclick="toggleMobileMenu()">Download</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="gradient-sphere sphere-1"></div>
+            <div class="gradient-sphere sphere-2"></div>
+            <div class="gradient-sphere sphere-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge" data-i18n="hero_badge">🌍 Supporting 126 Languages</div>
+            <h1 class="hero-title">
+                <span data-i18n="hero_title_1">Translate Anything,</span>
+                <span class="gradient-text" data-i18n="hero_title_2">Anywhere</span>
+            </h1>
+            <p class="hero-description" data-i18n="hero_desc">
+                Professional translation tool with instant hotkey translation, smart clipboard monitoring, and advanced OCR screen capture. Break language barriers effortlessly.
+            </p>
+            <div class="hero-buttons">
+                <a href="#download" class="btn btn-primary">
+                    <i class="fas fa-download"></i>
+                    <span data-i18n="hero_download">Download Free</span>
+                </a>
+                <a href="#features" class="btn btn-secondary">
+                    <i class="fas fa-play-circle"></i>
+                    <span data-i18n="hero_learn">Learn More</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">126</span>
+                    <span class="stat-label" data-i18n="stat_languages">Languages</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label" data-i18n="stat_services">Translation Services</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label" data-i18n="stat_free">Free Forever</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="app-preview">
+                <div class="preview-header">
+                    <div class="preview-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span class="preview-title">Panda Translator</span>
+                </div>
+                <div class="preview-content">
+                    <div class="preview-status">
+                        <span class="status-dot"></span>
+                        <span data-i18n="preview_status">Active - Ready to translate</span>
+                    </div>
+                    <div class="preview-info">
+                        <p data-i18n="preview_instruction">Select text and press hotkey to translate</p>
+                        <p class="hotkey">Ctrl+Shift+T</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge" data-i18n="features_badge">✨ Powerful Features</span>
+                <h2 class="section-title" data-i18n="features_title">Everything You Need for Translation</h2>
+                <p class="section-desc" data-i18n="features_desc">Discover the powerful features that make Panda Translator the perfect choice for all your translation needs.</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3 data-i18n="feature1_title">Hotkey Translation</h3>
+                    <p data-i18n="feature1_desc">Select any text anywhere and press your custom hotkey. Get instant translation in a beautiful popup window.</p>
+                    <div class="feature-shortcut">
+                        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3 data-i18n="feature2_title">Smart Window</h3>
+                    <p data-i18n="feature2_desc">Enable automatic clipboard monitoring. Copy any text and watch it translate automatically in a smart floating window.</p>
+                    <div class="feature-tag" data-i18n="feature2_tag">Auto-Translate</div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card featured">
+                    <div class="feature-badge" data-i18n="feature_popular">Most Popular</div>
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3 data-i18n="feature3_title">OCR Screen Capture</h3>
+                    <p data-i18n="feature3_desc">Capture any area of your screen and extract text from images, videos, or any visual content. Supports 126 languages!</p>
+                    <div class="feature-shortcut">
+                        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 data-i18n="feature4_title">Auto Language Detection</h3>
+                    <p data-i18n="feature4_desc">No need to specify the source language. Panda automatically detects the language of your text and translates it.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3 data-i18n="feature5_title">Translation History</h3>
+                    <p data-i18n="feature5_desc">Access all your past translations anytime. Search, copy, and reuse translations from your history.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 data-i18n="feature6_title">Multiple Services</h3>
+                    <p data-i18n="feature6_desc">Choose from Google Translate, DeepL, or MyMemory. Automatic fallback ensures you always get a translation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge" data-i18n="how_badge">📖 Simple & Easy</span>
+                <h2 class="section-title" data-i18n="how_title">How It Works</h2>
+                <p class="section-desc" data-i18n="how_desc">Get started in seconds. Three powerful ways to translate anything.</p>
+            </div>
+
+            <div class="steps-container">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3 data-i18n="step1_title">Hotkey Translation</h3>
+                    <ul class="step-list">
+                        <li data-i18n="step1_item1">Select any text in any application</li>
+                        <li data-i18n="step1_item2">Press Ctrl+Shift+T (customizable)</li>
+                        <li data-i18n="step1_item3">Translation appears instantly</li>
+                    </ul>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-window-restore"></i>
+                    </div>
+                    <h3 data-i18n="step2_title">Smart Window</h3>
+                    <ul class="step-list">
+                        <li data-i18n="step2_item1">Enable in Settings → Smart Window</li>
+                        <li data-i18n="step2_item2">Copy any text (Ctrl+C)</li>
+                        <li data-i18n="step2_item3">Auto-translation appears</li>
+                    </ul>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-crop-alt"></i>
+                    </div>
+                    <h3 data-i18n="step3_title">OCR Capture</h3>
+                    <ul class="step-list">
+                        <li data-i18n="step3_item1">Press Ctrl+Shift+S</li>
+                        <li data-i18n="step3_item2">Select area with text</li>
+                        <li data-i18n="step3_item3">Text extracted & translated</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages" class="languages">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge" data-i18n="lang_badge">🌍 Global Support</span>
+                <h2 class="section-title" data-i18n="lang_title">126 Supported Languages</h2>
+                <p class="section-desc" data-i18n="lang_desc">From Arabic to Zulu, we've got you covered with comprehensive language support.</p>
+            </div>
+
+            <div class="languages-showcase">
+                <div class="lang-category">
+                    <h4 data-i18n="lang_cat_popular">Popular Languages</h4>
+                    <div class="lang-tags">
+                        <span class="lang-tag">🇺🇸 English</span>
+                        <span class="lang-tag">🇸🇦 العربية</span>
+                        <span class="lang-tag">🇨🇳 中文</span>
+                        <span class="lang-tag">🇪🇸 Español</span>
+                        <span class="lang-tag">🇫🇷 Français</span>
+                        <span class="lang-tag">🇩🇪 Deutsch</span>
+                        <span class="lang-tag">🇷🇺 Русский</span>
+                        <span class="lang-tag">🇯🇵 日本語</span>
+                        <span class="lang-tag">🇰🇷 한국어</span>
+                        <span class="lang-tag">🇮🇹 Italiano</span>
+                        <span class="lang-tag">🇵🇹 Português</span>
+                        <span class="lang-tag">🇹🇷 Türkçe</span>
+                    </div>
+                </div>
+
+                <div class="lang-category">
+                    <h4 data-i18n="lang_cat_asian">Asian Languages</h4>
+                    <div class="lang-tags">
+                        <span class="lang-tag">🇮🇳 हिन्दी</span>
+                        <span class="lang-tag">🇧🇩 বাংলা</span>
+                        <span class="lang-tag">🇹🇭 ไทย</span>
+                        <span class="lang-tag">🇻🇳 Tiếng Việt</span>
+                        <span class="lang-tag">🇮🇩 Indonesia</span>
+                        <span class="lang-tag">🇲🇾 Melayu</span>
+                        <span class="lang-tag">🇵🇭 Filipino</span>
+                        <span class="lang-tag">🇰🇭 ខ្មែរ</span>
+                    </div>
+                </div>
+
+                <div class="lang-category">
+                    <h4 data-i18n="lang_cat_middle">Middle Eastern</h4>
+                    <div class="lang-tags">
+                        <span class="lang-tag">🇮🇷 فارسی</span>
+                        <span class="lang-tag">🇵🇰 اردو</span>
+                        <span class="lang-tag">🇮🇱 עברית</span>
+                        <span class="lang-tag">🇦🇫 پښتو</span>
+                        <span class="lang-tag">🇦🇲 Հայերdelays</span>
+                        <span class="lang-tag">🇬🇪 ქართული</span>
+                    </div>
+                </div>
+
+                <div class="lang-category">
+                    <h4 data-i18n="lang_cat_european">European Languages</h4>
+                    <div class="lang-tags">
+                        <span class="lang-tag">🇬🇷 Ελληνικά</span>
+                        <span class="lang-tag">🇵🇱 Polski</span>
+                        <span class="lang-tag">🇳🇱 Nederlands</span>
+                        <span class="lang-tag">🇸🇪 Svenska</span>
+                        <span class="lang-tag">🇳🇴 Norsk</span>
+                        <span class="lang-tag">🇩🇰 Dansk</span>
+                        <span class="lang-tag">🇫🇮 Suomi</span>
+                        <span class="lang-tag">🇨🇿 Čeština</span>
+                        <span class="lang-tag">🇭🇺 Magyar</span>
+                        <span class="lang-tag">🇷🇴 Română</span>
+                        <span class="lang-tag">🇧🇬 Български</span>
+                        <span class="lang-tag">🇺🇦 Українська</span>
+                    </div>
+                </div>
+
+                <div class="more-languages">
+                    <p data-i18n="lang_more">+ 80 more languages including African, Ancient, and Regional languages!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-card">
+                <div class="download-content">
+                    <div class="download-icon">
+                        <img src="../P.png" alt="Panda Logo">
+                    </div>
+                    <h2 data-i18n="download_title">Download Panda Translator</h2>
+                    <p class="version">Version 2.1</p>
+                    <p class="download-desc" data-i18n="download_desc">Free, fast, and powerful. No registration required. Works offline after installation.</p>
+                    
+                    <div class="download-features">
+                        <div class="dl-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-i18n="dl_feature1">Windows 10/11 Compatible</span>
+                        </div>
+                        <div class="dl-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-i18n="dl_feature2">No Installation Required</span>
+                        </div>
+                        <div class="dl-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-i18n="dl_feature3">Portable Application</span>
+                        </div>
+                        <div class="dl-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-i18n="dl_feature4">Auto-Updates</span>
+                        </div>
+                    </div>
+
+                    <a href="#" class="btn btn-download">
+                        <i class="fab fa-windows"></i>
+                        <span data-i18n="download_btn">Download for Windows</span>
+                    </a>
+
+                    <p class="download-note" data-i18n="download_note">Compatible with Windows 10 and Windows 11 (64-bit)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../P.png" alt="Panda Logo">
+                    <span>Panda Translator</span>
+                </div>
+                <div class="footer-links">
+                    <a href="http://facebook.com/Younis.A.Alobeid" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://anon-site.github.io/" target="_blank">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Anon Design. <span data-i18n="footer_rights">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
